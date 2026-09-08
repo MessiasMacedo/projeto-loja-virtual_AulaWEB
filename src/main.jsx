@@ -7,20 +7,15 @@ import App from './App'
 import ProductsPage from './pages/ProductsPage'
 import ContatoPage from './pages/ContatoPage'
 import PageNotFound from './pages/PageNotFound'
-import Layout from './pages/Layout'
-import CategoriesPage from './pages/CategoriesPage'
 
 const router = createBrowserRouter([
   {
-    element: <Layout/>,
-    errorElement: <PageNotFound/>,
-    children: [
-      {index: true, element: <App/>},
-      {path: "produtos", element: <ProductsPage/>},
-      {path: "categorias/:category", element: <CategoriesPage/>},
-      {path: "contato", element: <ContatoPage />}
-    ]
-  }
+    path: "/",
+    element: <App/>,
+    errorElement: <PageNotFound/>
+  },
+  {path: "produtos", element: <ProductsPage/>},
+  {path: "contato", element: <ContatoPage />}
 ]);
 
 createRoot(document.getElementById('root')).render(
